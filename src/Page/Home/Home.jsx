@@ -1,5 +1,5 @@
 import { Button } from '@material-tailwind/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Home = () => {
     const [details, setDetails] = useState({counter : 0, name : "your text"})
@@ -11,6 +11,10 @@ const Home = () => {
             }
         })
     }
+
+    useEffect(() => {
+        document.title = `${details.counter} new message`
+    })
 
     console.log(details)
     
