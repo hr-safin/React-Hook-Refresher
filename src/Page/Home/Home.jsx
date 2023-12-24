@@ -14,7 +14,7 @@ const Home = () => {
 
     useEffect(() => {
         document.title = `${details.counter} new message`
-    })
+    }, [])
 
     console.log(details)
     
