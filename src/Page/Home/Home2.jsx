@@ -1,27 +1,17 @@
-import { Button } from "@material-tailwind/react";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React from 'react';
 
 const Home2 = () => {
-  const [toggle, setToggle] = useState(false);
-  const textRef = useRef();
 
-  useEffect(() => {
-    if (textRef.current) {
-      const dimension = textRef.current.getBoundingClientRect();
-      textRef.current.style.paddingTop = `${dimension.height}px`
-    }
-  }, [toggle]);
-
-  // useLayoutEffect(() => {
-  //     console.log("UseLayoutEffect runs")
-  // }, [toggle])
-
+//   //<picture>
+//   <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
+//   <source media="(min-width:465px)" srcset="img_white_flower.jpg">
+//   <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+// </picture>
   return (
-    <div className=" flex h-screen flex-col gap-4 justify-center items-center ">
-      <Button onClick={() => setToggle(!toggle)} color="blue">
-        Toggle
-      </Button>
-      {toggle && <h2 ref={textRef}>I will get a good job</h2>}
+    <div>
+      <picture>
+        <source media={"(min-width:650px)"} srcSet='https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg' />
+      </picture>
     </div>
   );
 };

@@ -4,6 +4,8 @@ import { app } from '../Firebase/firebase.config';
 export const AuthContext = createContext(null)
 const AuthProvider = ({children}) => {
 
+    console.log(children)
+
     const auth = getAuth(app)
 
     const [user, setUser] = useState(null)
